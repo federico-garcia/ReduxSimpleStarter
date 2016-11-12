@@ -1,10 +1,18 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 
+import SearchBar from './components/search_bar';
+
+const API_KEY = 'AIzaSyAsOlz2JKzNaBMeUWw9CJdXhla3wXG13OQ';
+
 // Create a react Component
 // conts App = function() { Equal to const App = () => {
 const App = () => {
-  return <div>Hi There Arrow functions!</div>;
+  return (
+    <div>
+      <SearchBar />
+    </div>
+  );
 }
 
 // Add the components generated HTML to the DOM
