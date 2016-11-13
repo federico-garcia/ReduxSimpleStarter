@@ -14,10 +14,10 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <div>
+      <div className="search-bar">
         <input
           value={this.state.term}
-          onChange={this.onInputChange} />
+          onChange={(event) => this.onInputChange(event.target.value)} />
       </div>
     );
   }
@@ -25,11 +25,12 @@ class SearchBar extends Component {
   // in order to properly use `this`, you need to define methods using the
   // arrow function syntax. why? Arrow functions capture the `this` value of the
   // enclosing context
-  onInputChange = (event) => {
+  onInputChange = (term) => {
     this.setState({
-      term: event.target.value
+      term: term
     });
-    console.log(event.target.value);
+    this.props.onSearchByTerm(term);
+    //console.log(event.target.value);
   }
 }
 
